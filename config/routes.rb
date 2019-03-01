@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   #   get "/photos" => "photos#index"
   # end
   namespace :api do
-    get '/query_params_url' => 'pages#query_action'
+    get '/query_params' => 'pages#query_action'
+    get '/name_route' => 'pages#name_action'
   end
 end
