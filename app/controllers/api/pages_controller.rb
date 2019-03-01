@@ -16,9 +16,17 @@ class Api::PagesController < ApplicationController
     render 'name_view.json.jbuilder'
   end
 
-  def guess_action
+  def game_action
     # get user input
-    user_input = 5
+    user_input = params[:guess].to_i
+    answer = 58
+    if user_input > answer
+      @message = "Too high, man."
+    elsif  user_input < answer
+      @message = "Too low, man."
+    elsif user_input == answer
+      @message = "That's like, your opinion, man. But also correct."
   end
-
+  render 'game_view.json.jbuilder'
+  end
 end
