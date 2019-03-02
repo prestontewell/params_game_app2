@@ -26,7 +26,14 @@ class Api::PagesController < ApplicationController
       @message = "Too low, man."
     elsif user_input == answer
       @message = "That's like, your opinion, man. But also correct."
+    end
+    render 'game_view.json.jbuilder'
   end
-  render 'game_view.json.jbuilder'
+
+  def segment_action
+    @local = params[:place]
+    render 'segment_view.json.jbuilder'
   end
+
+
 end
